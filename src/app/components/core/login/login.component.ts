@@ -8,5 +8,7 @@ import { Observable } from 'rxjs/Rx';
 })
 
 export class LoginComponent {
-
+	login(data) {
+		console.log(data);
+	}
 }
