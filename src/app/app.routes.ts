@@ -5,15 +5,15 @@ import { HomeComponent } from './components/core/home/home.component';
 import { LoginComponent } from './components/core/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect URL
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent }
+	{ path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect URL
+	{ path: 'home', component: HomeComponent },
+	{ path: 'login', component: LoginComponent }
 ];
+
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
-    providers: [
-    ]
+    providers: []
 })
 
 export class AppRouting { }
