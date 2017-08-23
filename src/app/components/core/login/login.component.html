@@ -1,29 +1,29 @@
 <div class="row login-wrapper">
     <div class="col-md-4 col-md-offset-4">
         <div class="login-block">
-            <form class="login-form" novalidate #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <form class="login-form" novalidate [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
                 <h1>Login</h1>
                 <div class="form-group">
-			        <label htmlFor=username>Username</label>
-			        <input
-				        type=text
-				        class="form-control"
-				        name=username
-			        />
-			        <!-- {error && <span class="error">{error}</span>} -->
-			    </div>
-			    <div class="form-group">
-			        <label htmlFor=password>Password</label>
-			        <input
-				        type=text
-				        class="form-control"
-				        name=password
-			        />
-			        <!-- {error && <span class="error">{error}</span>} -->
-			    </div>
-			    <div class="form-group">
-				    <button type="submit" [disabled]="!loginForm.form.valid">Submit</button>
-			    </div>
+                    <label htmlFor="username">Username</label>
+                    <input (focus)="errorMessage = false" type="text" class="form-control" formControlName="username" />
+                    <span class="error" *ngIf="loginForm.get('username').touched && loginForm.get('username').hasError('required')">
+	                    Username is required
+                    </span>
+                    <span class="error" *ngIf="loginForm.get('username').touched && loginForm.get('username').hasError('email')">
+	                    Invalid Username
+		            </span>
+                </div>
+                <div class="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input (focus)="errorMessage = false" type="password" class="form-control" formControlName="password" />
+                    <span class="error" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">
+	                    Password is required
+                    </span>
+                    <span class="error" *ngIf="!loginForm.get('password').focus && errorMessage ">
+                        Invalid username or password  
+                    </span>
+                </div>
+                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

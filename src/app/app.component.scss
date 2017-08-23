@@ -1,5 +1,17 @@
 html,
 body,
 .main-wrapper {
-    height: 100%;
+	height: 100%;
+}
+
+@font-face {
+	font-family: 'Frutiger Next Pro';
+	src: url('./assets/fonts/frutigernextpro-regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'Frutiger Next Pro';
+	font-size: 14px;
 }

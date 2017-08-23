@@ -1,3 +1,8 @@
 <div class="content_wrapper">
     home
+    <p-dataTable [value]="project" sortField="name" rowGroupMode="rowspan">
+        <p-column field="name" header="Name" [sortable]="true" [style]="{'width': '200px'}"></p-column>
+        <p-column field="issue" header="Issue" [sortable]="true" [style]="{'width': '200px'}"></p-column>
+        <p-column field="status" header="Status" [sortable]="true" [style]="{'width': '200px'}"></p-column>
+    </p-dataTable>
 </div>
